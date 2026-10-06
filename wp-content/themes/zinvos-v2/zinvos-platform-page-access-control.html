@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zinvos Platform | Complete Conference Technology</title>
+<meta name="description" content="Manage registration, communication, mobile app engagement, onsite operations, certificates, and analytics with one connected conference technology platform.">
+
+<style>
+:root{
+  --bg:#f4f6f5;
+  --surface:#ffffff;
+  --text:#12191d;
+  --muted:#68767d;
+  --border:rgba(18,25,29,.10);
+  --dark:#11181c;
+  --blue:#3189cc;
+  --green:#79b928;
+  --orange:#ff9c00;
+  --pink:#eb0b59;
+  --max:1320px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+a{color:inherit}
+.zp-container{width:min(100% - 40px,var(--max));margin:0 auto}
+
+/* Hero */
+.zp-hero{padding:105px 0 78px}
+.zp-hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(400px,.85fr);
+  gap:70px;
+  align-items:center;
+}
+.zp-eyebrow{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:20px;
+  color:#53636b;font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.12em;
+}
+.zp-dots{
+  width:9px;height:9px;margin-right:30px;border-radius:50%;
+  background:var(--green);
+  box-shadow:15px 0 0 var(--blue),30px 0 0 var(--orange);
+}
+.zp-hero h1{
+  margin:0;max-width:850px;
+  font-size:clamp(58px,7vw,96px);
+  line-height:.93;letter-spacing:-.06em;font-weight:580;
+}
+.zp-hero h1 strong{font-weight:850}
+.zp-hero-copy{
+  max-width:720px;margin:26px 0 0;
+  color:var(--muted);font-size:18px;line-height:1.72;
+}
+.zp-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.zp-btn{
+  min-height:50px;padding:0 20px;border-radius:999px;
+  display:inline-flex;align-items:center;justify-content:center;
+  text-decoration:none;font-size:13px;font-weight:760;
+  border:1px solid transparent;transition:.2s ease;
+}
+.zp-btn:hover{transform:translateY(-2px)}
+.zp-btn-dark{background:var(--dark);color:#fff}
+.zp-btn-light{border-color:var(--border)}
+
+.zp-hero-visual{
+  min-height:500px;position:relative;overflow:hidden;border-radius:32px;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(49,137,204,.24),transparent 28%),
+    radial-gradient(circle at 85% 12%,rgba(255,156,0,.14),transparent 25%),
+    linear-gradient(140deg,#dfebf0,#eff2ee 50%,#f8eadf);
+}
+.zp-dashboard{
+  width:min(520px,84%);position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  padding:22px;border-radius:26px;background:rgba(255,255,255,.9);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 30px 70px rgba(25,51,64,.16);
+}
+.zp-dashboard-top{
+  display:flex;align-items:center;justify-content:space-between;gap:15px;
+  padding-bottom:18px;border-bottom:1px solid var(--border);
+}
+.zp-brand{display:flex;align-items:center;gap:10px}
+.zp-brand-mark{
+  width:34px;height:34px;border-radius:50%;
+  background:conic-gradient(var(--blue),var(--green),var(--orange),var(--pink),var(--blue));
+  position:relative;
+}
+.zp-brand-mark:after{
+  content:"";position:absolute;inset:9px;background:#fff;border-radius:50%;
+}
+.zp-brand small{display:block;color:#859197;font-size:8px;text-transform:uppercase}
+.zp-brand strong{display:block;margin-top:2px;font-size:14px}
+.zp-live{
+  padding:7px 9px;border-radius:999px;background:#ebf5e3;color:#648936;
+  font-size:9px;font-weight:800;
+}
+.zp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.zp-stat{padding:15px;border-radius:15px;background:#f2f5f3}
+.zp-stat:nth-child(1){background:#e5f0f7}
+.zp-stat:nth-child(2){background:#eaf4e3}
+.zp-stat:nth-child(3){background:#fff0dd}
+.zp-stat small{display:block;color:#7e8a90;font-size:8px;text-transform:uppercase}
+.zp-stat strong{display:block;margin-top:8px;font-size:21px}
+.zp-flow{
+  margin-top:18px;padding:16px;border-radius:16px;background:#11181c;color:#fff;
+}
+.zp-flow small{display:block;color:#9eaaaf;font-size:8px;text-transform:uppercase}
+.zp-flow-line{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  margin-top:12px;font-size:10px;
+}
+.zp-flow-line b{color:#7d8a90}
+
+/* Lifecycle */
+.zp-lifecycle{padding:0 0 88px}
+.zp-lifecycle-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.zp-lifecycle-item{padding:26px 24px;border-right:1px solid var(--border)}
+.zp-lifecycle-item:last-child{border-right:0}
+.zp-lifecycle-item small{
+  display:block;color:#8a969b;font-size:9px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.08em;
+}
+.zp-lifecycle-item strong{
+  display:block;margin-top:7px;font-size:20px;letter-spacing:-.03em;
+}
+
+/* Common */
+.zp-section{padding:96px 0}
+.zp-section-white{background:#fff}
+.zp-section-head{
+  display:grid;grid-template-columns:1fr .82fr;
+  gap:60px;align-items:end;margin-bottom:46px;
+}
+.zp-section-head h2{
+  margin:0;max-width:760px;font-size:clamp(44px,5vw,70px);
+  line-height:.97;letter-spacing:-.055em;
+}
+.zp-section-head p{
+  margin:0;max-width:540px;color:var(--muted);
+  font-size:16px;line-height:1.72;
+}
+
+/* Modules */
+.zp-modules{display:grid;gap:18px}
+.zp-module{
+  min-height:450px;display:grid;grid-template-columns:.9fr 1.1fr;
+  border:1px solid var(--border);border-radius:28px;overflow:hidden;background:#fafbfa;
+}
+.zp-module:nth-child(even){grid-template-columns:1.1fr .9fr}
+.zp-module:nth-child(even) .zp-module-copy{order:2}
+.zp-module:nth-child(even) .zp-module-visual{order:1}
+.zp-module-copy{padding:44px;display:flex;flex-direction:column;justify-content:center}
+.zp-module-index{
+  color:#8c989d;font-size:10px;font-weight:800;
+  letter-spacing:.09em;text-transform:uppercase;
+}
+.zp-module h3{
+  margin:18px 0 12px;font-size:38px;line-height:1;letter-spacing:-.045em;
+}
+.zp-module-copy p{
+  margin:0;max-width:520px;color:var(--muted);font-size:14px;line-height:1.7;
+}
+.zp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.zp-tag{
+  padding:9px 11px;border:1px solid var(--border);border-radius:999px;
+  background:#fff;color:#596970;font-size:10px;font-weight:700;
+}
+.zp-module-link{
+  margin-top:26px;width:max-content;text-decoration:none;font-size:12px;font-weight:800;
+}
+.zp-module-visual{
+  min-height:450px;position:relative;overflow:hidden;
+}
+.zp-v1{background:linear-gradient(135deg,#e2edf3,#eef4ec)}
+.zp-v2{background:linear-gradient(135deg,#eef4e6,#e8f2f0)}
+.zp-v3{background:linear-gradient(135deg,#eef0f7,#f4e6ee)}
+.zp-v4{background:linear-gradient(135deg,#fff0df,#edf0eb)}
+.zp-v5{background:linear-gradient(135deg,#e5eff7,#f5e9dc)}
+
+.zp-ui{
+  width:min(510px,80%);position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  padding:22px;border-radius:25px;background:#fff;
+  box-shadow:0 26px 60px rgba(25,52,68,.14);
+}
+.zp-ui-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-bottom:16px;border-bottom:1px solid var(--border);
+}
+.zp-ui-head strong{font-size:15px}
+.zp-ui-head span{color:#7c898f;font-size:9px}
+
+.zp-channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:18px}
+.zp-channel{
+  min-height:112px;padding:15px;border-radius:15px;background:#f2f5f3;
+}
+.zp-channel:nth-child(1){background:#e4f0f8}
+.zp-channel:nth-child(2){background:#e8f4e2}
+.zp-channel:nth-child(3){background:#fff0db}
+.zp-channel small{display:block;color:#7d898f;font-size:8px;text-transform:uppercase}
+.zp-channel strong{display:block;margin-top:14px;font-size:13px}
+.zp-channel span{display:block;margin-top:6px;color:#758288;font-size:9px;line-height:1.45}
+.zp-result{
+  margin-top:14px;padding:12px 14px;border-radius:13px;background:#11181c;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:10px;
+}
+
+.zp-chat-row{
+  max-width:86%;margin-top:14px;padding:12px 13px;border-radius:14px;
+  background:#f2f5f3;color:#53636b;font-size:10px;line-height:1.55;
+}
+.zp-chat-row.out{margin-left:auto;background:#11181c;color:#fff}
+.zp-mini-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.zp-mini-tags span{
+  padding:8px 10px;border:1px solid var(--border);border-radius:999px;
+  font-size:8px;color:#69777e;
+}
+
+.zp-phone{
+  width:250px;margin:0 auto;padding:10px;border-radius:38px;background:#11181c;
+  box-shadow:0 28px 60px rgba(25,52,68,.18);
+}
+.zp-phone-screen{min-height:370px;overflow:hidden;border-radius:30px;background:#fff}
+.zp-phone-hero{
+  min-height:130px;padding:22px;background:linear-gradient(135deg,#11181c,#30424b);color:#fff;
+}
+.zp-phone-hero small{color:#aeb7bb;font-size:8px}
+.zp-phone-hero strong{display:block;margin-top:8px;font-size:21px;line-height:1.05}
+.zp-phone-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:16px}
+.zp-phone-grid div{
+  min-height:64px;border-radius:14px;background:#f1f4f2;
+  display:grid;place-items:center;color:#64747b;font-size:9px;font-weight:700;
+}
+
+.zp-person{display:flex;align-items:center;gap:13px;padding:20px 0}
+.zp-avatar{
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,#dcebf2,#edf3e4);
+}
+.zp-person h4{margin:0;font-size:18px}
+.zp-person p{margin:5px 0 0;color:#7a878d;font-size:9px}
+.zp-checks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.zp-checks div{
+  padding:12px;border-radius:12px;border:1px solid var(--border);font-size:9px;
+}
+
+.zp-access-ui{
+  width:min(560px,86%);
+}
+.zp-access-person{
+  padding:18px 0;
+}
+.zp-access-person__top{
+  display:grid;
+  grid-template-columns:52px minmax(0,1fr) auto;
+  gap:13px;
+  align-items:center;
+}
+.zp-access-person__top h4{
+  margin:0;
+  font-size:17px;
+}
+.zp-access-person__top p{
+  margin:5px 0 0;
+  color:#7a878d;
+  font-size:9px;
+}
+.zp-avatar--muted{
+  background:linear-gradient(135deg,#ecefee,#e2e6e4);
+}
+.zp-access-status{
+  padding:8px 10px;
+  border-radius:999px;
+  font-size:8px;
+  font-weight:850;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+.zp-access-status--granted{
+  background:#e8f4df;
+  color:#5e882f;
+}
+.zp-access-status--denied{
+  background:#f7e7e7;
+  color:#a54b4b;
+}
+.zp-access-meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:14px;
+}
+.zp-access-meta div{
+  padding:11px 12px;
+  border-radius:12px;
+  background:#f4f6f5;
+}
+.zp-access-meta small{
+  display:block;
+  color:#879399;
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.zp-access-meta strong{
+  display:block;
+  margin-top:4px;
+  font-size:10px;
+}
+.zp-access-divider{
+  height:1px;
+  background:var(--border);
+}
+.zp-access-person--muted{
+  opacity:.78;
+}
+
+.zp-complete-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.zp-complete-card{min-height:130px;padding:16px;border-radius:16px;background:#f2f5f3}
+.zp-complete-card:nth-child(1){background:#e5f0f7}
+.zp-complete-card:nth-child(2){background:#fff0dc}
+.zp-complete-card small{display:block;color:#7c898f;font-size:8px;text-transform:uppercase}
+.zp-complete-card strong{display:block;margin-top:22px;font-size:22px}
+.zp-complete-card span{display:block;margin-top:5px;color:#738087;font-size:9px}
+
+/* Connected section */
+.zp-connected{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
+.zp-connected-copy{
+  padding:38px;border-radius:26px;background:#11181c;color:#fff;
+}
+.zp-connected-copy small{
+  color:#aeb8bd;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+}
+.zp-connected-copy h3{
+  margin:14px 0 12px;font-size:40px;line-height:1;letter-spacing:-.045em;
+}
+.zp-connected-copy p{margin:0;color:#aeb8bd;font-size:14px;line-height:1.7}
+.zp-connected-map{padding:28px;border-radius:26px;background:#eef2ef}
+.zp-map-row{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-bottom:12px;
+}
+.zp-map-row:last-child{margin-bottom:0}
+.zp-node{
+  min-height:66px;padding:14px;border-radius:15px;background:#fff;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  font-size:11px;font-weight:750;
+}
+.zp-arrow{color:#89959a}
+
+/* Final CTA */
+.zp-final{padding:100px 0}
+.zp-final-box{
+  padding:52px;border-radius:30px;border:1px solid var(--border);
+  background:
+    radial-gradient(circle at 10% 10%,rgba(49,137,204,.18),transparent 28%),
+    radial-gradient(circle at 88% 18%,rgba(255,156,0,.12),transparent 24%),
+    #fff;
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;
+}
+.zp-final-box h2{
+  margin:0;max-width:760px;font-size:clamp(42px,5vw,70px);
+  line-height:.97;letter-spacing:-.055em;
+}
+.zp-final-box p{
+  margin:18px 0 0;max-width:650px;color:var(--muted);font-size:15px;line-height:1.7;
+}
+
+@media(max-width:1050px){
+  .zp-hero-grid,.zp-section-head,.zp-connected,.zp-final-box{grid-template-columns:1fr}
+  .zp-lifecycle-grid{grid-template-columns:repeat(2,1fr)}
+  .zp-module,.zp-module:nth-child(even){grid-template-columns:1fr}
+  .zp-module:nth-child(even) .zp-module-copy,
+  .zp-module:nth-child(even) .zp-module-visual{order:initial}
+}
+@media(max-width:700px){
+  .zp-container{width:min(100% - 24px,var(--max))}
+  .zp-hero{padding:72px 0 56px}
+  .zp-hero h1{font-size:54px}
+  .zp-hero-visual{min-height:440px}
+  .zp-dashboard{width:90%}
+  .zp-stats,.zp-channel-grid{grid-template-columns:1fr}
+  .zp-lifecycle-grid{grid-template-columns:1fr}
+  .zp-lifecycle-item{border-right:0;border-bottom:1px solid var(--border)}
+  .zp-section{padding:70px 0}
+  .zp-section-head{gap:20px}
+  .zp-section-head h2{font-size:45px}
+  .zp-module-copy{padding:28px}
+  .zp-module h3{font-size:32px}
+  .zp-module-visual{min-height:400px}
+  .zp-map-row{grid-template-columns:1fr}
+  .zp-arrow{text-align:center;transform:rotate(90deg)}
+  .zp-access-person__top{
+    grid-template-columns:44px 1fr;
+  }
+  .zp-access-status{
+    grid-column:1 / -1;
+    width:max-content;
+  }
+  .zp-access-meta{
+    grid-template-columns:1fr;
+  }
+  .zp-final-box{padding:30px}
+}
+</style>
+</head>
+
+<body>
+<main>
+
+<section class="zp-hero">
+  <div class="zp-container zp-hero-grid">
+    <div>
+      <div class="zp-eyebrow">
+        <span class="zp-dots"></span>
+        Zinvos Platform
+      </div>
+
+      <h1>
+        One Connected Platform
+        <strong>for the Entire Event Journey</strong>
+      </h1>
+
+      <p class="zp-hero-copy">
+        From registration and attendee communication to the mobile event experience,
+        onsite operations, certificates, and analytics — Zinvos brings every stage
+        of your conference into one connected technology platform.
+      </p>
+
+      <div class="zp-actions">
+        <a class="zp-btn zp-btn-dark" href="#">Start Free ↗</a>
+        <a class="zp-btn zp-btn-light" href="#">Book a Demo</a>
+      </div>
+    </div>
+
+    <div class="zp-hero-visual">
+      <div class="zp-dashboard">
+        <div class="zp-dashboard-top">
+          <div class="zp-brand">
+            <span class="zp-brand-mark"></span>
+            <span>
+              <small>Conference Dashboard</small>
+              <strong>Everything Connected</strong>
+            </span>
+          </div>
+          <span class="zp-live">LIVE</span>
+        </div>
+
+        <div class="zp-stats">
+          <div class="zp-stat"><small>Registrations</small><strong>2,350</strong></div>
+          <div class="zp-stat"><small>Checked In</small><strong>1,689</strong></div>
+          <div class="zp-stat"><small>Certificates</small><strong>1,524</strong></div>
+        </div>
+
+        <div class="zp-flow">
+          <small>Connected Event Journey</small>
+          <div class="zp-flow-line">
+            <span>Register</span><b>→</b>
+            <span>Communicate</span><b>→</b>
+            <span>Engage</span><b>→</b>
+            <span>Operate</span><b>→</b>
+            <span>Complete</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zp-lifecycle">
+  <div class="zp-container">
+    <div class="zp-lifecycle-grid">
+      <div class="zp-lifecycle-item"><small>01</small><strong>Register</strong></div>
+      <div class="zp-lifecycle-item"><small>02</small><strong>Communicate</strong></div>
+      <div class="zp-lifecycle-item"><small>03</small><strong>Engage</strong></div>
+      <div class="zp-lifecycle-item"><small>04</small><strong>Manage Onsite</strong></div>
+      <div class="zp-lifecycle-item"><small>05</small><strong>Complete</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="zp-section zp-section-white">
+  <div class="zp-container">
+    <div class="zp-section-head">
+      <h2>From Registration to Certificates — One Platform</h2>
+      <p>
+        Each part of Zinvos works together, so attendee information moves through
+        the event lifecycle without disconnected systems or repeated data entry.
+      </p>
+    </div>
+
+    <div class="zp-modules">
+
+      <article class="zp-module">
+        <div class="zp-module-copy">
+          <span class="zp-module-index">01 / Registration & Attendee Management</span>
+          <h3>Register Attendees from Web, WhatsApp or Mobile</h3>
+          <p>
+            Give attendees multiple ways to register while keeping every registration
+            connected to one attendee record. Manage confirmations, tickets,
+            payments, attendee details, and QR codes from the same platform.
+          </p>
+          <div class="zp-tags">
+            <span class="zp-tag">Web Registration</span>
+            <span class="zp-tag">WhatsApp Registration</span>
+            <span class="zp-tag">Mobile App Registration</span>
+            <span class="zp-tag">Ticketing</span>
+            <span class="zp-tag">QR Codes</span>
+          </div>
+          <a class="zp-module-link" href="#">Explore Registration & Ticketing ↗</a>
+        </div>
+
+        <div class="zp-module-visual zp-v1">
+          <div class="zp-ui">
+            <div class="zp-ui-head">
+              <strong>New Event Registration</strong>
+              <span>One attendee record</span>
+            </div>
+            <div class="zp-channel-grid">
+              <div class="zp-channel">
+                <small>Web</small>
+                <strong>Website</strong>
+                <span>Registration form and payment flow.</span>
+              </div>
+              <div class="zp-channel">
+                <small>WhatsApp</small>
+                <strong>Chat Registration</strong>
+                <span>Register and receive ticket confirmation.</span>
+              </div>
+              <div class="zp-channel">
+                <small>Mobile</small>
+                <strong>Zinvos App</strong>
+                <span>Register through the event application.</span>
+              </div>
+            </div>
+            <div class="zp-result">
+              <span>Attendee Record Created</span>
+              <strong>Ticket + QR Ready ✓</strong>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="zp-module">
+        <div class="zp-module-copy">
+          <span class="zp-module-index">02 / Communication & Campaigns</span>
+          <h3>Keep Attendees Informed Before and During the Event</h3>
+          <p>
+            Send confirmations, reminders, schedule updates, event information,
+            and attendee communications through connected channels including WhatsApp.
+          </p>
+          <div class="zp-tags">
+            <span class="zp-tag">WhatsApp Updates</span>
+            <span class="zp-tag">Email Campaigns</span>
+            <span class="zp-tag">Reminders</span>
+            <span class="zp-tag">Event Updates</span>
+          </div>
+          <a class="zp-module-link" href="#">Explore Communication Tools ↗</a>
+        </div>
+
+        <div class="zp-module-visual zp-v2">
+          <div class="zp-ui">
+            <div class="zp-ui-head">
+              <strong>Zinvos Events</strong>
+              <span>Attendee communication</span>
+            </div>
+            <div class="zp-chat-row">Your conference registration is confirmed. Your QR ticket is ready.</div>
+            <div class="zp-chat-row out">Reminder: The scientific program begins tomorrow at 9:00 AM.</div>
+            <div class="zp-mini-tags">
+              <span>Confirmations</span>
+              <span>Reminders</span>
+              <span>Program Updates</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="zp-module">
+        <div class="zp-module-copy">
+          <span class="zp-module-index">03 / Mobile Event App</span>
+          <h3>Your Event in Every Attendee’s Pocket</h3>
+          <p>
+            Give attendees a branded mobile experience for schedules, speakers,
+            session information, live engagement, notifications, and instant assistance
+            through the Zinvos AI event chatbot.
+          </p>
+          <div class="zp-tags">
+            <span class="zp-tag">Agenda</span>
+            <span class="zp-tag">Speakers</span>
+            <span class="zp-tag">Polls & Quizzes</span>
+            <span class="zp-tag">AI Event Assistant</span>
+            <span class="zp-tag">Push Updates</span>
+          </div>
+          <a class="zp-module-link" href="#">Explore the Mobile Event App ↗</a>
+        </div>
+
+        <div class="zp-module-visual zp-v3">
+          <div class="zp-ui" style="background:transparent;box-shadow:none">
+            <div class="zp-phone">
+              <div class="zp-phone-screen">
+                <div class="zp-phone-hero">
+                  <small>Annual Conference 2026</small>
+                  <strong>Your Event.<br>Your Schedule.</strong>
+                </div>
+                <div class="zp-phone-grid">
+                  <div>Agenda</div>
+                  <div>Speakers</div>
+                  <div>AI Assistant</div>
+                  <div>Polls</div>
+                  <div>Q&amp;A</div>
+                  <div>Certificates</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="zp-module">
+        <div class="zp-module-copy">
+          <span class="zp-module-index">04 / Onsite Event Management</span>
+          <h3>Manage Check-In, Attendance &amp; Controlled Access</h3>
+          <p>
+            Use QR-based check-in, attendance tracking, category-based access control,
+            and badge or label printing to manage onsite operations from one connected system.
+            Restrict workshops, sessions, or designated areas based on each attendee’s
+            registration category or ticket entitlement.
+          </p>
+          <div class="zp-tags">
+            <span class="zp-tag">QR Check-In</span>
+            <span class="zp-tag">Attendance Tracking</span>
+            <span class="zp-tag">Category-Based Access Control</span>
+            <span class="zp-tag">Badge Printing</span>
+          </div>
+          <a class="zp-module-link" href="#">Explore Onsite Management ↗</a>
+        </div>
+
+        <div class="zp-module-visual zp-v4">
+          <div class="zp-ui zp-access-ui">
+            <div class="zp-ui-head">
+              <strong>Workshop Access Control</strong>
+              <span>LIVE ENTRY CHECK</span>
+            </div>
+
+            <div class="zp-access-person">
+              <div class="zp-access-person__top">
+                <span class="zp-avatar"></span>
+                <span>
+                  <h4>John Doe</h4>
+                  <p>Delegate · Workshop A Registered</p>
+                </span>
+                <span class="zp-access-status zp-access-status--granted">ACCESS GRANTED</span>
+              </div>
+
+              <div class="zp-access-meta">
+                <div>
+                  <small>Entry Point</small>
+                  <strong>Advanced Workshop A</strong>
+                </div>
+                <div>
+                  <small>Entitlement</small>
+                  <strong>Workshop Included ✓</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="zp-access-divider"></div>
+
+            <div class="zp-access-person zp-access-person--muted">
+              <div class="zp-access-person__top">
+                <span class="zp-avatar zp-avatar--muted"></span>
+                <span>
+                  <h4>Jane Doe</h4>
+                  <p>General Conference Registration</p>
+                </span>
+                <span class="zp-access-status zp-access-status--denied">ACCESS DENIED</span>
+              </div>
+
+              <div class="zp-access-meta">
+                <div>
+                  <small>Entry Point</small>
+                  <strong>Advanced Workshop A</strong>
+                </div>
+                <div>
+                  <small>Entitlement</small>
+                  <strong>Workshop Not Included</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="zp-module">
+        <div class="zp-module-copy">
+          <span class="zp-module-index">05 / Certificates & Analytics</span>
+          <h3>Complete the Event Without Manual Follow-Up</h3>
+          <p>
+            Generate online certificates for eligible attendees, collect feedback,
+            and review event performance through connected post-event reporting and analytics.
+          </p>
+          <div class="zp-tags">
+            <span class="zp-tag">Online Certificates</span>
+            <span class="zp-tag">Attendance Verification</span>
+            <span class="zp-tag">Feedback</span>
+            <span class="zp-tag">Analytics</span>
+          </div>
+          <a class="zp-module-link" href="#">Explore Certificates & Analytics ↗</a>
+        </div>
+
+        <div class="zp-module-visual zp-v5">
+          <div class="zp-ui">
+            <div class="zp-ui-head">
+              <strong>Post-Event Dashboard</strong>
+              <span>Conference complete</span>
+            </div>
+            <div class="zp-complete-grid">
+              <div class="zp-complete-card">
+                <small>Certificates</small>
+                <strong>1,524</strong>
+                <span>Ready for eligible attendees</span>
+              </div>
+              <div class="zp-complete-card">
+                <small>Feedback</small>
+                <strong>84%</strong>
+                <span>Response completion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="zp-section">
+  <div class="zp-container">
+    <div class="zp-section-head">
+      <h2>One Attendee Record Across the Entire Event</h2>
+      <p>
+        Registration, communication, onsite actions, engagement, attendance,
+        and certificates stay connected instead of living in separate tools.
+      </p>
+    </div>
+
+    <div class="zp-connected">
+      <div class="zp-connected-copy">
+        <small>Connected by design</small>
+        <h3>Less Reconciliation. More Control.</h3>
+        <p>
+          When an attendee registers, the same record continues through confirmations,
+          ticketing, QR check-in, attendance, access management, engagement,
+          and certificate eligibility.
+        </p>
+      </div>
+
+      <div class="zp-connected-map">
+        <div class="zp-map-row">
+          <div class="zp-node"><span>Web / WhatsApp / App</span><strong>Registration</strong></div>
+          <span class="zp-arrow">→</span>
+          <div class="zp-node"><span>Single Record</span><strong>Attendee</strong></div>
+        </div>
+        <div class="zp-map-row">
+          <div class="zp-node"><span>QR / Badge / Workshop Access</span><strong>Onsite</strong></div>
+          <span class="zp-arrow">→</span>
+          <div class="zp-node"><span>Session Tracking</span><strong>Attendance</strong></div>
+        </div>
+        <div class="zp-map-row">
+          <div class="zp-node"><span>Polls / Quiz / Q&amp;A</span><strong>Engagement</strong></div>
+          <span class="zp-arrow">→</span>
+          <div class="zp-node"><span>Eligible Attendees</span><strong>Certificates</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zp-final">
+  <div class="zp-container">
+    <div class="zp-final-box">
+      <div>
+        <div class="zp-eyebrow">
+          <span class="zp-dots"></span>
+          Run Your Next Event on Zinvos
+        </div>
+        <h2>One Platform Instead of Multiple Disconnected Tools</h2>
+        <p>
+          Start with the tools you need today and use the same connected platform
+          throughout your complete event lifecycle.
+        </p>
+      </div>
+      <div class="zp-actions">
+        <a class="zp-btn zp-btn-dark" href="#">Start Free ↗</a>
+        <a class="zp-btn zp-btn-light" href="#">Book a Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+document.querySelectorAll('a[href="#"]').forEach(link => {
+  link.addEventListener('click', event => event.preventDefault());
+});
+</script>
+</body>
+</html>

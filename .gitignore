@@ -1,0 +1,10 @@
+# Zip files
+*.zip
+
+# Cache directories
+cache/
+**/cache/
+
+# Duplicator Lite backups
+backups-dup-lite/
+**/backups-dup-lite/
