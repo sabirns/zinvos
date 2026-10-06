@@ -315,7 +315,45 @@ get_header();
       </div>
 
       <div class="zp-form" id="partnerForm">
-    	<?php echo do_shortcode('[contact-form-7 id="159" title="Become a Partner"]'); ?>
+    	<?php
+        $partner_cf7 = do_shortcode('[contact-form-7 id="159" title="Become a Partner"]');
+        if ( strpos( $partner_cf7, '[contact-form-7' ) === false && ! empty( trim( $partner_cf7 ) ) ) :
+            echo $partner_cf7;
+        else :
+        ?>
+            <form class="zinvos-contact-form" id="partnerApplicationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="partner-name">Your Name *</label>
+                        <input type="text" id="partner-name" name="your-name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partner-company">Event Company Name *</label>
+                        <input type="text" id="partner-company" name="your-company" placeholder="Acme Events" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="partner-email">Email Address *</label>
+                        <input type="email" id="partner-email" name="your-email" placeholder="you@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partner-phone">Phone / WhatsApp *</label>
+                        <input type="tel" id="partner-phone" name="your-phone" placeholder="+91 98765 43210" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="partner-message">Tell us about your events &amp; setup needs</label>
+                    <textarea id="partner-message" name="your-message" rows="4" placeholder="How many events do you manage per year? What features do you need white-labeled?"></textarea>
+                </div>
+
+                <button type="submit" class="btn primary" style="width: 100%; margin-top: 10px;">
+                    Submit Partner Application &rarr;
+                </button>
+            </form>
+        <?php endif; ?>
       </div>
     </div>
   </section>

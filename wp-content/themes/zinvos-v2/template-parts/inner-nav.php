@@ -50,7 +50,7 @@
         </div>
 
         <div class="nav-actions">
-            <a class="btn primary" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Book a Demo
+            <a class="btn primary" href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>">Book a Demo
                 <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.svg" alt="" class="arrow-img">
             </a>
             <button class="menu-btn" id="inner-menu-btn" aria-label="Open menu">&#9776;</button>

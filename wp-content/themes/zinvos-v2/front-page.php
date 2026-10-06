@@ -473,25 +473,25 @@ get_header();
                     <article class="blog-card">
                         <div class="blog-card-body">
                             <div class="blog-meta"><span class="blog-cat">Event Tech</span><span class="blog-date">AUG 24, 2026</span></div>
-                            <h3><a href="#">How WhatsApp Integration Streamlines Onsite Registrations</a></h3>
+                            <h3><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">How WhatsApp Integration Streamlines Onsite Registrations</a></h3>
                             <p>Discover how instant messaging automation reduces check-in queues and keeps attendees informed in real-time.</p>
-                            <a href="#" class="blog-read-more">Read Article &rarr;</a>
+                            <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="blog-read-more">Read Article &rarr;</a>
                         </div>
                     </article>
                     <article class="blog-card">
                         <div class="blog-card-body">
                             <div class="blog-meta"><span class="blog-cat">Conferences</span><span class="blog-date">AUG 15, 2026</span></div>
-                            <h3><a href="#">The Future of Medical &amp; CME Conference Management</a></h3>
+                            <h3><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">The Future of Medical &amp; CME Conference Management</a></h3>
                             <p>Key strategies for managing complex multi-hall scientific tracks, speaker schedules, and instant credit tracking.</p>
-                            <a href="#" class="blog-read-more">Read Article &rarr;</a>
+                            <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="blog-read-more">Read Article &rarr;</a>
                         </div>
                     </article>
                     <article class="blog-card">
                         <div class="blog-card-body">
                             <div class="blog-meta"><span class="blog-cat">Product Update</span><span class="blog-date">JUL 30, 2026</span></div>
-                            <h3><a href="#">Automating Post-Event Certificate Distribution with QR Verification</a></h3>
+                            <h3><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Automating Post-Event Certificate Distribution with QR Verification</a></h3>
                             <p>Generate and distribute tamper-proof digital certificates automatically upon session completion.</p>
-                            <a href="#" class="blog-read-more">Read Article &rarr;</a>
+                            <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="blog-read-more">Read Article &rarr;</a>
                         </div>
                     </article>
                     <?php

@@ -14,27 +14,27 @@
 
             <div class="foot-col">
                 <h4>Platform</h4>
-                <a href="#platform">Registration</a>
-                <a href="#platform">Communication</a>
-                <a href="#onsite">Onsite Operations</a>
-                <a href="#onsite">Session Engagement</a>
-                <a href="#platform">Certificates</a>
+                <a href="<?php echo esc_url( home_url( '/platform#registration' ) ); ?>">Registration</a>
+                <a href="<?php echo esc_url( home_url( '/platform#communication' ) ); ?>">Communication</a>
+                <a href="<?php echo esc_url( home_url( '/platform#onsite' ) ); ?>">Onsite Operations</a>
+                <a href="<?php echo esc_url( home_url( '/platform#mobile-app' ) ); ?>">Session Engagement</a>
+                <a href="<?php echo esc_url( home_url( '/platform#certificates' ) ); ?>">Certificates</a>
             </div>
 
             <div class="foot-col">
                 <h4>Solutions</h4>
-                <a href="#partners">Self-Serve</a>
-                <a href="#partners">Managed Events</a>
-                <a href="#partners">White Label</a>
-                <a href="#conferences">Conferences</a>
+                <a href="<?php echo esc_url( home_url( '/solutions#academic' ) ); ?>">Academic &amp; Scientific</a>
+                <a href="<?php echo esc_url( home_url( '/solutions#medical' ) ); ?>">Medical &amp; CME</a>
+                <a href="<?php echo esc_url( home_url( '/solutions#corporate' ) ); ?>">Corporate Events</a>
+                <a href="<?php echo esc_url( home_url( '/solutions#associations' ) ); ?>">Associations &amp; Societies</a>
             </div>
 
             <div class="foot-col">
                 <h4>Company</h4>
-                <a href="#stories">Case Studies</a>
+                <a href="<?php echo esc_url( home_url( '/#stories' ) ); ?>">Case Studies</a>
                 <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a>
-                <a href="#contact">Contact Us</a>
-                <a href="#contact">Book a Demo</a>
+                <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>">Contact Us</a>
+                <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>">Book a Demo</a>
             </div>
 
             <div class="foot-col">
