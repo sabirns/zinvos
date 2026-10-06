@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             features: ["Web registration", "WhatsApp registration", "Payments", "QR confirmation"],
             stackA: { kicker: "Web", title: "Registration", badge: "Live", sub: "+1,280 delegates online", bar: "82%" },
             stackB: { kicker: "WhatsApp", title: "Confirmed ✓", badge: "Instant", msg: "QR Pass sent to attendee" },
-            stackC: { kicker: "Attendee profile", title: "QR Pass Ready", badge: "Verified", icon: '<div class="card-mini-qr"></div>', code: "#ZV-9824", sub: "Entry Gate Authorized" }
+            stackC: { kicker: "Attendee profile", title: "QR Pass Ready", badge: "Verified", icon: '<div class="card-mini-icon icon-qr"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3z"/><path d="M18 18h3v3h-3z"/><path d="M14 21h3"/><path d="M21 14v3"/></svg></div>', code: "#ZV-9824", sub: "Entry Gate Authorized" }
         },
         {
             stage: "02",
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             features: ["WhatsApp Broadcasts", "Email Campaigns & Newsletters", "SMS & Push Alerts", "Promotion & Ticket Reminders"],
             stackA: { kicker: "WhatsApp", title: "Broadcast Sent", badge: "Delivered", sub: "1,450 messages sent", bar: "98%" },
             stackB: { kicker: "Delivery", title: "98% Open Rate", badge: "Active", msg: "Campaign metrics tracking" },
-            stackC: { kicker: "Promote", title: "Campaign Active", badge: "Scheduled", icon: '<div class="card-mini-icon icon-bullseye">🎯</div>', code: "CAMPAIGN #02", sub: "Reach: 12.4k Delegates" }
+            stackC: { kicker: "Promote", title: "Campaign Active", badge: "Scheduled", icon: '<div class="card-mini-icon icon-bullseye"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>', code: "CAMPAIGN #02", sub: "Reach: 12.4k Delegates" }
         },
         {
             stage: "03",
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             features: ["QR Scan Check-in", "Instant Badge Printing", "Session Gate Control", "Live Attendance Dashboard"],
             stackA: { kicker: "Scanner", title: "Checked In ✓", badge: "1.8 sec", sub: "Main Hall Gate A", bar: "94%" },
             stackB: { kicker: "Printer", title: "Badge Printing", badge: "Printing", msg: "Lanyard badge queued" },
-            stackC: { kicker: "Gate 1", title: "Flow Normal", badge: "Optimal", icon: '<div class="card-mini-icon icon-scanner">⚡</div>', code: "GATE-01 PASS", sub: "1.8s Fast Check-in" }
+            stackC: { kicker: "Gate 1", title: "Flow Normal", badge: "Optimal", icon: '<div class="card-mini-icon icon-scanner"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 8h10"/><path d="M7 12h5"/><path d="M15 15l2 2 4-4"/></svg></div>', code: "GATE-01 PASS", sub: "1.8s Fast Check-in" }
         },
         {
             stage: "04",
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
             features: ["Live Audience Polling", "Speaker Q&A", "Session Feedback", "Leaderboard Points"],
             stackA: { kicker: "Poll", title: "1,248 Votes", badge: "Poll Open", sub: "89% participation", bar: "89%" },
             stackB: { kicker: "Q&A", title: "Question Posted", badge: "Top Voted", msg: "Approved by moderator" },
-            stackC: { kicker: "Session", title: "Rating 4.9★", badge: "Keynote", icon: '<div class="card-mini-icon icon-star">★</div>', code: "SCORE 4.9 / 5.0", sub: "1,120 Attendee Ratings" }
+            stackC: { kicker: "Session", title: "Rating 4.9★", badge: "Keynote", icon: '<div class="card-mini-icon icon-star"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>', code: "SCORE 4.9 / 5.0", sub: "1,120 Attendee Ratings" }
         },
         {
             stage: "05",
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             features: ["Instant Certificates", "Verification Links", "Analytics Export", "Attendee History"],
             stackA: { kicker: "Certificate", title: "Generated ✓", badge: "Auto Sent", sub: "1,200 PDF certificates", bar: "100%" },
             stackB: { kicker: "Download", title: "Ready", badge: "Verified", msg: "SHA-256 secure hash" },
-            stackC: { kicker: "Analytics", title: "Report Exported", badge: "Complete", icon: '<div class="card-mini-icon icon-doc">📄</div>', code: "EXECUTIVE REPORT", sub: "PDF & CSV Downloaded" }
+            stackC: { kicker: "Analytics", title: "Report Exported", badge: "Complete", icon: '<div class="card-mini-icon icon-doc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>', code: "EXECUTIVE REPORT", sub: "PDF & CSV Downloaded" }
         }
     ];
 

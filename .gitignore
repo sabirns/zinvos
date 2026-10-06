@@ -8,3 +8,7 @@ cache/
 # Duplicator Lite backups
 backups-dup-lite/
 **/backups-dup-lite/
+
+# Windows Zone Identifier files
+*:Zone.Identifier
+

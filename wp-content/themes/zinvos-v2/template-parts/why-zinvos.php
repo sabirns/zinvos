@@ -231,7 +231,9 @@
                                 </div>
                                 <h4>John Doe</h4>
                                 <p>Delegate · Standard Access</p>
-                                <div class="zinvos-ticket__qr"></div>
+                                <div class="zinvos-ticket__qr">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/images/zinvos-qr-code.svg" alt="Zinvos Pass QR Code" class="zinvos-ticket__qr-img">
+                                </div>
                                 <div class="zinvos-ticket__details">
                                     <div><small>Registration</small><strong>Confirmed ✓</strong></div>
                                     <div><small>Payment</small><strong>Completed ✓</strong></div>

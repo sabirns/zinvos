@@ -93,12 +93,10 @@ get_header();
 
                 <!-- WhatsApp Notification Widget -->
                 <div class="whatsapp">
-                    <div class="wa-head">
-                        <div class="wa-icon">W</div>
-                        <div>Zinvos on WhatsApp</div>
-                    </div>
-                    <div class="bubble">Your registration is confirmed. Your QR pass is ready for check-in.</div>
-                    <div style="margin-top:10px; font-size:11px; color:#739079">Delivered &check;&check;</div>
+                    <picture>
+                        <source srcset="<?php echo get_template_directory_uri(); ?>/images/zinvos-whatsapp-screenshot.webp" type="image/webp">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/zinvos-whatsapp-screenshot.png" alt="Zinvos WhatsApp Pass & Notification" class="wa-screen-img">
+                    </picture>
                 </div>
 
                 <!-- Floating Animated Status Chips -->
@@ -229,7 +227,11 @@ get_header();
                             </div>
                             <b>QR Pass Ready</b>
                             <div class="card-qr-row">
-                                <div class="card-c-icon-wrap"><div class="card-mini-qr"></div></div>
+                                <div class="card-c-icon-wrap">
+                                    <div class="card-mini-icon icon-qr">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3z"/><path d="M18 18h3v3h-3z"/><path d="M14 21h3"/><path d="M21 14v3"/></svg>
+                                    </div>
+                                </div>
                                 <div class="card-qr-info">
                                     <span class="qr-code-id">#ZV-9824</span>
                                     <small class="card-c-sub">Entry Gate Authorized</small>
