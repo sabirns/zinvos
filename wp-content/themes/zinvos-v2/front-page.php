@@ -20,7 +20,7 @@ get_header();
                 <div class="hero-actions">
                     <a class="btn primary" href="<?php echo home_url('/contact-us'); ?>">Book a Demo <span><img src="<?php echo get_template_directory_uri(); ?>/images/arrow.svg" alt="arrow" class="arrow-img"></span></a>
                 </div>
-                <div class="micro-proof">
+                <!-- <div class="micro-proof">
                     <div class="avatar-stack">
                         <div class="avatar"></div>
                         <div class="avatar"></div>
@@ -28,7 +28,7 @@ get_header();
                         <div class="avatar"></div>
                     </div>
                     <div><strong>One attendee journey</strong><br>from registration to certificate.</div>
-                </div>
+                </div> -->
             </div>
 
             <div class="hero-stage" aria-label="Zinvos product ecosystem illustration">
@@ -37,7 +37,8 @@ get_header();
                     <div class="dash-head">
                         <div class="dash-title">
                             <div class="dot" style="background:var(--green)"></div>
-                            Zinvos Event Console
+                            <span class="dash-title-main">Zinvos Event Console</span>
+                            <span class="dash-title-badge">Dashboard</span>
                         </div>
                         <div class="dots">
                             <div class="dot" style="background:#ff5f56"></div>
@@ -46,7 +47,45 @@ get_header();
                         </div>
                     </div>
                     <div class="dash-screen">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/desktop-screen.png" alt="Zinvos Desktop Event Console" class="desktop-screen-img">
+                        <div class="desktop-slideshow">
+                            <?php
+                            $images_dir = get_template_directory() . '/images/';
+                            $all_files = is_dir( $images_dir ) ? scandir( $images_dir ) : array();
+                            $desktop_screen_files = array();
+                            if ( ! empty( $all_files ) ) {
+                                foreach ( $all_files as $file ) {
+                                    if ( preg_match( '/^desktop-screen.*\.(png|jpg|jpeg|webp)$/i', $file ) ) {
+                                        $desktop_screen_files[] = $file;
+                                    }
+                                }
+                            }
+                            if ( ! empty( $desktop_screen_files ) ) :
+                                usort( $desktop_screen_files, function( $a, $b ) {
+                                    if ( $a === 'desktop-screen.png' ) return -1;
+                                    if ( $b === 'desktop-screen.png' ) return 1;
+                                    return strnatcmp( $a, $b );
+                                });
+                                $first_desk = true;
+                                $desk_meta = array(
+                                    'desktop-screen.png'   => array( 'title' => 'Zinvos Event Management Dashboard', 'view' => 'Dashboard' ),
+                                    'desktop-screen-2.png' => array( 'title' => 'Registration & Attendance Reports', 'view' => 'Reports' ),
+                                    'desktop-screen-3.png' => array( 'title' => 'Event Operations & Messaging Hub',  'view' => 'Operations' ),
+                                );
+                                foreach ( $desktop_screen_files as $file ) :
+                                    $img_url = get_template_directory_uri() . '/images/' . $file;
+                                    $active_class = $first_desk ? ' active' : '';
+                                    $info = isset( $desk_meta[ $file ] ) ? $desk_meta[ $file ] : array( 'title' => 'Zinvos Desktop Event Console', 'view' => 'Console' );
+                                    ?>
+                                    <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $info['title'] ); ?>" data-view="<?php echo esc_attr( $info['view'] ); ?>" class="desktop-screen-img desktop-slide<?php echo $active_class; ?>">
+                                    <?php
+                                    $first_desk = false;
+                                endforeach;
+                            else :
+                                ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/desktop-screen.png" alt="Zinvos Desktop Event Console" data-view="Dashboard" class="desktop-screen-img desktop-slide active">
+                            <?php endif; ?>
+                        </div>
+                        <div class="desktop-dots"></div>
                     </div>
                 </div>
 
@@ -56,12 +95,10 @@ get_header();
                         <div class="island"></div>
                         <div class="phone-slideshow">
                             <?php
-                            $images_dir = get_template_directory() . '/images/';
-                            $all_files = is_dir( $images_dir ) ? scandir( $images_dir ) : array();
                             $screen_files = array();
                             if ( ! empty( $all_files ) ) {
                                 foreach ( $all_files as $file ) {
-                                    if ( preg_match( '/^zinvos-screen.*\.(png|jpg|jpeg|webp)$/i', $file ) ) {
+                                    if ( preg_match( '/^z(in|i)vos-screen.*\.(png|jpg|jpeg|webp)$/i', $file ) ) {
                                         $screen_files[] = $file;
                                     }
                                 }
@@ -376,7 +413,7 @@ get_header();
                             <div class="conf-bottom">
                                 <span><?php echo esc_html( wp_trim_words( get_the_excerpt(), 25 ) ); ?></span>
                                 <a href="<?php the_permalink(); ?>">
-                                    <?php echo $is_upcoming ? 'Register' : 'View Details'; ?>
+                                    View Details
                                     <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.svg" alt="arrow" class="arrow-img">
                                 </a>
                             </div>
@@ -391,21 +428,21 @@ get_header();
                             <div class="conf-top"><span class="tag tag--upcoming">Upcoming</span><span class="date">NOV 26&ndash;28</span></div>
                             <h3>Annual Scientific Conference 2027</h3>
                         </div>
-                        <div class="conf-bottom"><span>Kollam, Kerala</span><a href="#register">Register <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.svg" alt="arrow" class="arrow-img"></a></div>
+                        <div class="conf-bottom"><span>Kollam, Kerala</span><a href="<?php echo esc_url( home_url('/events') ); ?>">View Details <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.svg" alt="arrow" class="arrow-img"></a></div>
                     </article>
                     <article class="conf">
                         <div>
                             <div class="conf-top"><span class="tag tag--upcoming">Upcoming</span><span class="date">JAN 18&ndash;20</span></div>
                             <h3>Research &amp; Innovation Summit</h3>
                         </div>
-                        <div class="conf-bottom"><span>Dubai, UAE</span><a href="#register">Register <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.svg" alt="arrow" class="arrow-img"></a></div>
+                        <div class="conf-bottom"><span>Dubai, UAE</span><a href="<?php echo esc_url( home_url('/events') ); ?>">View Details <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.svg" alt="arrow" class="arrow-img"></a></div>
                     </article>
                     <article class="conf">
                         <div>
                             <div class="conf-top"><span class="tag tag--past">Past</span><span class="date">MAR 06&ndash;08</span></div>
                             <h3>National Professional Congress</h3>
                         </div>
-                        <div class="conf-bottom"><span>Bengaluru, India</span><a href="#register">Register <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.svg" alt="arrow" class="arrow-img"></a></div>
+                        <div class="conf-bottom"><span>Bengaluru, India</span><a href="<?php echo esc_url( home_url('/events') ); ?>">View Details <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.svg" alt="arrow" class="arrow-img"></a></div>
                     </article>
                     <?php
                 endif;

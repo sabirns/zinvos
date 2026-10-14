@@ -1,6 +1,6 @@
 <!-- WHY ZINVOS SECTION -->
     <section class="zinvos-why reveal" id="why-zinvos">
-        <div class="zinvos-why__container">
+        <div class="container zinvos-why__container">
 
             <div class="zinvos-why__header">
                 <div>

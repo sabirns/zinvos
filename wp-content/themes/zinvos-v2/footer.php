@@ -31,10 +31,11 @@
 
             <div class="foot-col">
                 <h4>Company</h4>
-                <a href="<?php echo esc_url( home_url( '/#stories' ) ); ?>">Case Studies</a>
+                <a href="<?php echo esc_url( home_url( '/about-zinvos' ) ); ?>">About Us</a>
+                <a href="<?php echo esc_url( home_url( '/events' ) ); ?>">Upcoming Events</a>
                 <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a>
                 <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>">Contact Us</a>
-                <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>">Book a Demo</a>
+                <a href="<?php echo esc_url( home_url( '/partners' ) ); ?>">Partnership</a>
             </div>
 
             <div class="foot-col">

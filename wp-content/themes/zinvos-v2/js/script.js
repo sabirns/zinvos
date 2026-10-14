@@ -131,19 +131,62 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* --- 3. Mobile Navigation Menu Toggle --- */
-    const menuBtn = document.querySelector('.menu-btn');
-    const mobileNav = document.querySelector('.mobile-nav');
+    const menuButtons = document.querySelectorAll('.menu-btn, #inner-menu-btn');
+    const mobileNavs = document.querySelectorAll('.mobile-nav, #inner-mobile-nav');
 
-    if (menuBtn && mobileNav) {
-        menuBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            mobileNav.classList.toggle('active');
+    if (menuButtons.length && mobileNavs.length) {
+        menuButtons.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Find parent site header or fallback to document query
+                const parentHeader = btn.closest('.site-header, .top-wrap') || document;
+                const targetNav = parentHeader.querySelector('.mobile-nav') || mobileNavs[0];
+                
+                if (targetNav) {
+                    const isOpen = targetNav.classList.toggle('active');
+                    btn.classList.toggle('is-open', isOpen);
+                    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    btn.innerHTML = isOpen ? '&#10005;' : '&#9776;';
+                }
+            });
         });
 
+        // Close menu when clicking any link inside mobile navigation
+        mobileNavs.forEach(nav => {
+            const navLinks = nav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('active');
+                    menuButtons.forEach(btn => {
+                        btn.classList.remove('is-open');
+                        btn.setAttribute('aria-expanded', 'false');
+                        btn.innerHTML = '&#9776;';
+                    });
+                });
+            });
+        });
+
+        // Close menu when clicking outside
         document.addEventListener('click', function (e) {
-            if (!mobileNav.contains(e.target) && !menuBtn.contains(e.target)) {
-                mobileNav.classList.remove('active');
-            }
+            mobileNavs.forEach(nav => {
+                if (nav.classList.contains('active')) {
+                    let isClickInside = nav.contains(e.target);
+                    menuButtons.forEach(btn => {
+                        if (btn.contains(e.target)) isClickInside = true;
+                    });
+
+                    if (!isClickInside) {
+                        nav.classList.remove('active');
+                        menuButtons.forEach(btn => {
+                            btn.classList.remove('is-open');
+                            btn.setAttribute('aria-expanded', 'false');
+                            btn.innerHTML = '&#9776;';
+                        });
+                    }
+                }
+            });
         });
     }
 
@@ -295,22 +338,48 @@ document.addEventListener('DOMContentLoaded', function () {
         const zinvosAutoDelay = 3500;
         const zinvosReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        function setZinvosFeature(feature) {
+        const zinvosVisualHeading = document.querySelector('.zinvos-visual__heading');
+        const zinvosVisualBlock = document.querySelector('.zinvos-why__visual');
+
+        function setZinvosFeature(feature, isUserClick) {
             const index = zinvosFeatureList.findIndex(item => item.dataset.feature === feature);
             if (index < 0) return;
             zinvosActiveIndex = index;
             zinvosFeatures.forEach(item => item.classList.toggle('is-active', item.dataset.feature === feature));
             zinvosScenes.forEach(scene => scene.classList.toggle('is-active', scene.dataset.scene === feature));
             zinvosProgress.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
+            
+            // Brief visual refresh effect on title/text change
+            if (zinvosVisualHeading) {
+                zinvosVisualHeading.classList.add('is-updating');
+                setTimeout(() => zinvosVisualHeading.classList.remove('is-updating'), 220);
+            }
+
             if (zinvosLabel) zinvosLabel.textContent = zinvosContent[feature].label;
             if (zinvosTitle) zinvosTitle.textContent = zinvosContent[feature].title;
             if (zinvosCaption) zinvosCaption.textContent = zinvosContent[feature].caption;
+
+            // Mobile specific smooth scrolling & tab positioning
+            if (isUserClick) {
+                const activeTab = zinvosFeatureList[index];
+                if (activeTab && activeTab.scrollIntoView) {
+                    activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+
+                // If on mobile/small screen and visual stage is below viewport, bring into view
+                if (window.innerWidth <= 1000 && zinvosVisualBlock) {
+                    const rect = zinvosVisualBlock.getBoundingClientRect();
+                    if (rect.top < 0 || rect.bottom > window.innerHeight) {
+                        zinvosVisualBlock.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }
+            }
         }
 
         function zinvosNextFeature() {
             if (!zinvosFeatureList.length) return;
             zinvosActiveIndex = (zinvosActiveIndex + 1) % zinvosFeatureList.length;
-            setZinvosFeature(zinvosFeatureList[zinvosActiveIndex].dataset.feature);
+            setZinvosFeature(zinvosFeatureList[zinvosActiveIndex].dataset.feature, false);
         }
 
         function stopZinvosAutoSwitch() {
@@ -329,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function () {
         zinvosFeatures.forEach((item, index) => {
             item.addEventListener('click', () => {
                 zinvosActiveIndex = index;
-                setZinvosFeature(item.dataset.feature);
+                setZinvosFeature(item.dataset.feature, true);
                 startZinvosAutoSwitch();
             });
         });
@@ -433,6 +502,71 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (phoneSlides.length > 1) {
             resetPhoneTimer();
+        }
+    }
+
+    /* --- 8b. Hero Desktop Screen Image Fader --- */
+    const desktopSlides = document.querySelectorAll('.desktop-slideshow .desktop-slide');
+    const desktopDotsContainer = document.querySelector('.desktop-dots');
+    const dashBadge = document.querySelector('.dash-title-badge');
+    const dashboardContainer = document.querySelector('.dashboard');
+
+    if (desktopSlides.length > 0) {
+        let currentDesktopSlide = 0;
+        let desktopSlideInterval = null;
+
+        if (desktopSlides.length > 1 && desktopDotsContainer) {
+            desktopDotsContainer.innerHTML = '';
+            desktopSlides.forEach((_, idx) => {
+                const dot = document.createElement('span');
+                dot.className = 'desktop-dot' + (idx === 0 ? ' active' : '');
+                dot.setAttribute('role', 'button');
+                dot.setAttribute('aria-label', 'Go to desktop screen ' + (idx + 1));
+                dot.addEventListener('click', () => {
+                    goToDesktopSlide(idx);
+                    resetDesktopTimer();
+                });
+                desktopDotsContainer.appendChild(dot);
+            });
+        }
+
+        function goToDesktopSlide(index) {
+            desktopSlides[currentDesktopSlide].classList.remove('active');
+            const dots = document.querySelectorAll('.desktop-dot');
+            if (dots[currentDesktopSlide]) dots[currentDesktopSlide].classList.remove('active');
+
+            currentDesktopSlide = index;
+
+            desktopSlides[currentDesktopSlide].classList.add('active');
+            if (dots[currentDesktopSlide]) dots[currentDesktopSlide].classList.add('active');
+
+            if (dashBadge && desktopSlides[currentDesktopSlide].dataset.view) {
+                dashBadge.textContent = desktopSlides[currentDesktopSlide].dataset.view;
+            }
+        }
+
+        function nextDesktopSlide() {
+            goToDesktopSlide((currentDesktopSlide + 1) % desktopSlides.length);
+        }
+
+        function resetDesktopTimer() {
+            if (desktopSlideInterval) clearInterval(desktopSlideInterval);
+            if (desktopSlides.length > 1) {
+                desktopSlideInterval = setInterval(nextDesktopSlide, 4500);
+            }
+        }
+
+        if (dashboardContainer) {
+            dashboardContainer.addEventListener('mouseenter', () => {
+                if (desktopSlideInterval) clearInterval(desktopSlideInterval);
+            });
+            dashboardContainer.addEventListener('mouseleave', () => {
+                resetDesktopTimer();
+            });
+        }
+
+        if (desktopSlides.length > 1) {
+            resetDesktopTimer();
         }
     }
 });

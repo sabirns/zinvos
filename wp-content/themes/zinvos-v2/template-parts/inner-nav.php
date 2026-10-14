@@ -75,15 +75,3 @@
         </a>
     </div>
 </header>
-
-<script>
-(function() {
-    var btn = document.getElementById('inner-menu-btn');
-    var nav = document.getElementById('inner-mobile-nav');
-    if ( btn && nav ) {
-        btn.addEventListener('click', function() {
-            nav.classList.toggle('active');
-        });
-    }
-})();
-</script>

@@ -135,12 +135,13 @@ function zinvos_v2_register_cpts() {
 			'singular_name' => __( 'Event', 'zinvos-v2' ),
 		),
 		'public'       => true,
-		'has_archive'  => true,
+		'has_archive'  => 'events',
 		'show_in_rest' => true,
 		'supports'     => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 		'menu_icon'    => 'dashicons-calendar',
 		'rewrite'      => array( 'slug' => 'event' ),
 	) );
+
 
 	// Case Study CPT
 	register_post_type( 'case_study', array(
@@ -192,3 +193,21 @@ function zinvos_v2_custom_excerpt_length( $length ) {
 	return 25;
 }
 add_filter( 'excerpt_length', 'zinvos_v2_custom_excerpt_length', 999 );
+
+/**
+ * Redirect /event archive URL to /events
+ */
+function zinvos_redirect_event_to_events() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	$request_uri = $_SERVER['REQUEST_URI'] ?? '';
+	// Redirect /event or /event/ (archive) to /events, preserving query args if present
+	if ( preg_match( '#/event/?(\?.*)?$#i', $request_uri ) ) {
+		wp_redirect( home_url( '/events' ), 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'zinvos_redirect_event_to_events' );
+
