@@ -54,17 +54,17 @@ add_action( 'after_setup_theme', 'zinvos_v2_setup' );
  * Enqueue scripts and styles.
  */
 function zinvos_v2_scripts() {
-	// Google Fonts
-	wp_enqueue_style( 'zinvos-v2-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap', array(), null );
+	// Google Fonts (Inter for modern UI/typography and Montserrat for brand headings)
+	wp_enqueue_style( 'zinvos-v2-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap', array(), null );
 
 	// FontAwesome icons
 	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), '6.5.1' );
 
 	// Core stylesheet
-	wp_enqueue_style( 'zinvos-v2-style', get_stylesheet_uri(), array(), '2.0.0' );
+	wp_enqueue_style( 'zinvos-v2-style', get_stylesheet_uri(), array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
 
 	// Theme script
-	wp_enqueue_script( 'zinvos-v2-script', get_template_directory_uri() . '/js/script.js', array(), '2.0.0', true );
+	wp_enqueue_script( 'zinvos-v2-script', get_template_directory_uri() . '/js/script.js', array(), filemtime( get_template_directory() . '/js/script.js' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'zinvos_v2_scripts' );
 

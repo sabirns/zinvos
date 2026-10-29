@@ -82,6 +82,29 @@ get_header();
                         </ul>
                     </div>
 
+                    <!-- Registered Office Card -->
+                    <div class="contact-card contact-card--office">
+                        <div class="contact-card__eyebrow">Registered Office</div>
+                        <h3>SPRDH Solutions Private Limited.</h3>
+                        <div class="contact-office-item">
+                            <div class="contact-icon contact-icon--orange">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-office-text">
+                                <address class="contact-address">
+                                    Suit 506, 39/2475-B1, LR Towers,<br>
+                                    SJRRA 104, South Janatha Road, Palarivattom,<br>
+                                    Kochi, Kerala, India, 682 025
+                                </address>
+                                <div class="contact-office-gst">
+                                    GST Number : <strong>32ABICS3831R1ZV</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- White Label Custom Solution Card -->
                     <div class="contact-card contact-card--dark">
                         <div class="contact-card__eyebrow">Custom Solutions</div>

@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Registration without friction.",
             text: "Let attendees register through web, WhatsApp or mobile and keep every registration connected to the same attendee record.",
             features: ["Web registration", "WhatsApp registration", "Payments", "QR confirmation"],
-            stackA: { kicker: "Web", title: "Registration", badge: "Live", sub: "+1,280 delegates online", bar: "82%" },
-            stackB: { kicker: "WhatsApp", title: "Confirmed ✓", badge: "Instant", msg: "QR Pass sent to attendee" },
-            stackC: { kicker: "Attendee profile", title: "QR Pass Ready", badge: "Verified", icon: '<div class="card-mini-icon icon-qr"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3z"/><path d="M18 18h3v3h-3z"/><path d="M14 21h3"/><path d="M21 14v3"/></svg></div>', code: "#ZV-9824", sub: "Entry Gate Authorized" }
+            accent: "#3189CC"
         },
         {
             stage: "02",
@@ -17,9 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Reach every delegate and promote with impact.",
             text: "Send automated schedule updates, marketing campaigns, badge QR passes, and personalized announcements via WhatsApp, email, and mobile push.",
             features: ["WhatsApp Broadcasts", "Email Campaigns & Newsletters", "SMS & Push Alerts", "Promotion & Ticket Reminders"],
-            stackA: { kicker: "WhatsApp", title: "Broadcast Sent", badge: "Delivered", sub: "1,450 messages sent", bar: "98%" },
-            stackB: { kicker: "Delivery", title: "98% Open Rate", badge: "Active", msg: "Campaign metrics tracking" },
-            stackC: { kicker: "Promote", title: "Campaign Active", badge: "Scheduled", icon: '<div class="card-mini-icon icon-bullseye"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>', code: "CAMPAIGN #02", sub: "Reach: 12.4k Delegates" }
+            accent: "#EB0B59"
         },
         {
             stage: "03",
@@ -27,9 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Zero queues at entry counters.",
             text: "Scan delegate QR codes in under 2 seconds, auto-print badges, and monitor live venue capacity across multiple entry gates.",
             features: ["QR Scan Check-in", "Instant Badge Printing", "Session Gate Control", "Live Attendance Dashboard"],
-            stackA: { kicker: "Scanner", title: "Checked In ✓", badge: "1.8 sec", sub: "Main Hall Gate A", bar: "94%" },
-            stackB: { kicker: "Printer", title: "Badge Printing", badge: "Printing", msg: "Lanyard badge queued" },
-            stackC: { kicker: "Gate 1", title: "Flow Normal", badge: "Optimal", icon: '<div class="card-mini-icon icon-scanner"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 8h10"/><path d="M7 12h5"/><path d="M15 15l2 2 4-4"/></svg></div>', code: "GATE-01 PASS", sub: "1.8s Fast Check-in" }
+            accent: "#4AA99C"
         },
         {
             stage: "04",
@@ -37,9 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Turn audience into active participants.",
             text: "Power interactive Q&A, live polls, speaker ratings, and gamified leaderboards right inside the delegate mobile app.",
             features: ["Live Audience Polling", "Speaker Q&A", "Session Feedback", "Leaderboard Points"],
-            stackA: { kicker: "Poll", title: "1,248 Votes", badge: "Poll Open", sub: "89% participation", bar: "89%" },
-            stackB: { kicker: "Q&A", title: "Question Posted", badge: "Top Voted", msg: "Approved by moderator" },
-            stackC: { kicker: "Session", title: "Rating 4.9★", badge: "Keynote", icon: '<div class="card-mini-icon icon-star"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>', code: "SCORE 4.9 / 5.0", sub: "1,120 Attendee Ratings" }
+            accent: "#FF9D00"
         },
         {
             stage: "05",
@@ -47,88 +39,261 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Automated certificates & analytics.",
             text: "Generate verified digital attendance certificates instantly based on check-in rules and export comprehensive event analytics.",
             features: ["Instant Certificates", "Verification Links", "Analytics Export", "Attendee History"],
-            stackA: { kicker: "Certificate", title: "Generated ✓", badge: "Auto Sent", sub: "1,200 PDF certificates", bar: "100%" },
-            stackB: { kicker: "Download", title: "Ready", badge: "Verified", msg: "SHA-256 secure hash" },
-            stackC: { kicker: "Analytics", title: "Report Exported", badge: "Complete", icon: '<div class="card-mini-icon icon-doc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>', code: "EXECUTIVE REPORT", sub: "PDF & CSV Downloaded" }
+            accent: "#7EBC2A"
         }
     ];
 
+    const journeyWrap = document.getElementById('journeyWrap') || document.querySelector('.journey-wrap');
     const journeyTabs = document.querySelectorAll('.journey-tab');
     const journeyEyebrow = document.getElementById('journeyEyebrow');
     const journeyTitle = document.getElementById('journeyTitle');
     const journeyText = document.getElementById('journeyText');
     const journeyFeatures = document.getElementById('journeyFeatures');
+    const stagePanels = document.querySelectorAll('.journey-stage-panel');
 
-    const stackA = document.querySelector('.stack-a');
-    const stackB = document.querySelector('.stack-b');
-    const stackC = document.querySelector('.stack-c');
+    let currentStageIndex = 0;
+    let autoSwitchTimer = null;
+    let isUserHovered = false;
+    let isSectionInView = false;
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function setJourneyStage(index) {
+        if (index < 0 || index >= stagesData.length) return;
+        currentStageIndex = index;
+        const data = stagesData[index];
+
+        // Update tabs
+        journeyTabs.forEach((t, i) => {
+            const isActive = i === index;
+            t.classList.toggle('active', isActive);
+            t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        // Update stage panels with smooth fade
+        if (stagePanels.length) {
+            stagePanels.forEach(p => p.classList.remove('active'));
+            const targetPanel = document.querySelector(`.journey-stage-panel[data-stage="${index}"]`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        }
+
+        // Update container stage attributes and stage accent color
+        if (journeyWrap) {
+            journeyWrap.setAttribute('data-active-stage', index);
+            journeyWrap.style.setProperty('--stage-accent', data.accent);
+        }
+
+        // Update left copy
+        if (data) {
+            if (journeyEyebrow) journeyEyebrow.textContent = data.eyebrow;
+            if (journeyTitle) journeyTitle.textContent = data.title;
+            if (journeyText) journeyText.textContent = data.text;
+            if (journeyFeatures) {
+                journeyFeatures.innerHTML = data.features.map(f => `<div>${f}</div>`).join('');
+            }
+        }
+    }
+
+    function startAutoSwitch() {
+        stopAutoSwitch();
+        if (prefersReducedMotion || isUserHovered || !isSectionInView) return;
+        autoSwitchTimer = setInterval(() => {
+            const nextIndex = (currentStageIndex + 1) % stagesData.length;
+            setJourneyStage(nextIndex);
+        }, 8000);
+    }
+
+    function stopAutoSwitch() {
+        if (autoSwitchTimer) {
+            clearInterval(autoSwitchTimer);
+            autoSwitchTimer = null;
+        }
+    }
+
+    if (journeyWrap) {
+        journeyWrap.addEventListener('mouseenter', () => {
+            isUserHovered = true;
+            stopAutoSwitch();
+        });
+        journeyWrap.addEventListener('mouseleave', () => {
+            isUserHovered = false;
+            startAutoSwitch();
+        });
+        journeyWrap.addEventListener('focusin', () => {
+            isUserHovered = true;
+            stopAutoSwitch();
+        });
+        journeyWrap.addEventListener('focusout', () => {
+            isUserHovered = false;
+            startAutoSwitch();
+        });
+
+        if ('IntersectionObserver' in window) {
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    isSectionInView = entry.isIntersecting;
+                    if (isSectionInView) {
+                        startAutoSwitch();
+                    } else {
+                        stopAutoSwitch();
+                    }
+                });
+            }, { threshold: 0.2 });
+            sectionObserver.observe(journeyWrap);
+        } else {
+            isSectionInView = true;
+            startAutoSwitch();
+        }
+    }
 
     if (journeyTabs.length && journeyTitle) {
         journeyTabs.forEach((tab, index) => {
             tab.addEventListener('click', function () {
-                journeyTabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-
-                const data = stagesData[index];
-                if (data) {
-                    if (journeyEyebrow) journeyEyebrow.textContent = data.eyebrow;
-                    journeyTitle.textContent = data.title;
-                    journeyText.textContent = data.text;
-
-                    if (journeyFeatures) {
-                        journeyFeatures.innerHTML = data.features.map(f => `<div>${f}</div>`).join('');
-                    }
-
-                    if (stackA && data.stackA) {
-                        const k = stackA.querySelector('.kicker'); if (k) k.textContent = data.stackA.kicker;
-                        const b = stackA.querySelector('b'); if (b) b.textContent = data.stackA.title;
-                        const badge = stackA.querySelector('.card-badge'); if (badge && data.stackA.badge) {
-                            const pulse = badge.querySelector('.pulse-dot');
-                            if (pulse) {
-                                badge.innerHTML = '';
-                                badge.appendChild(pulse);
-                                badge.appendChild(document.createTextNode(' ' + data.stackA.badge));
-                            } else {
-                                badge.textContent = data.stackA.badge;
-                            }
-                        }
-                        const sub = stackA.querySelector('.card-meta-text'); if (sub && data.stackA.sub) sub.textContent = data.stackA.sub;
-                        const bar = stackA.querySelector('.card-bar'); if (bar && data.stackA.bar) bar.style.width = data.stackA.bar;
-                    }
-
-                    if (stackB && data.stackB) {
-                        const k = stackB.querySelector('.kicker'); if (k) k.textContent = data.stackB.kicker;
-                        const b = stackB.querySelector('b'); if (b) b.textContent = data.stackB.title;
-                        const badge = stackB.querySelector('.card-badge'); if (badge && data.stackB.badge) badge.textContent = data.stackB.badge;
-                        const msg = stackB.querySelector('.card-wa-bubble span'); if (msg && data.stackB.msg) msg.textContent = data.stackB.msg;
-                    }
-
-                    if (stackC && data.stackC) {
-                        const k = stackC.querySelector('.kicker'); if (k) k.textContent = data.stackC.kicker;
-                        const b = stackC.querySelector('b'); if (b) b.textContent = data.stackC.title;
-                        const badge = stackC.querySelector('.card-badge'); if (badge && data.stackC.badge) badge.textContent = data.stackC.badge;
-                        const iconWrap = stackC.querySelector('.card-c-icon-wrap'); if (iconWrap && data.stackC.icon) iconWrap.innerHTML = data.stackC.icon;
-                        const code = stackC.querySelector('.qr-code-id'); if (code && data.stackC.code) code.textContent = data.stackC.code;
-                        const sub = stackC.querySelector('.card-c-sub'); if (sub && data.stackC.sub) sub.textContent = data.stackC.sub;
-                    }
-                }
+                setJourneyStage(index);
+                startAutoSwitch();
             });
         });
     }
 
-    /* --- 2. Scroll Reveal Animations --- */
-    const reveals = document.querySelectorAll('.reveal');
-    if (reveals.length) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in');
+    /* --- 2. Enhanced Scroll Reveal & Stagger Animations --- */
+    (function initScrollAnimations() {
+        // Dynamic scroll progress bar at top of viewport
+        if (!document.querySelector('.scroll-progress-bar')) {
+            const bar = document.createElement('div');
+            bar.className = 'scroll-progress-bar';
+            bar.setAttribute('aria-hidden', 'true');
+            document.body.prepend(bar);
+
+            function updateProgressBar() {
+                const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                if (totalScroll > 0) {
+                    const percent = Math.min(100, Math.max(0, (window.pageYOffset / totalScroll) * 100));
+                    bar.style.width = percent + '%';
+                }
+            }
+            window.addEventListener('scroll', updateProgressBar, { passive: true });
+            updateProgressBar();
+        }
+
+        // Automatic stagger indexes on card grids across templates
+        const gridContainers = document.querySelectorAll('.events-grid, .blog-grid, .logo-track, .footer-grid, .zs-solutions, .feature-grid, .zp-grid, .zs-grid');
+        gridContainers.forEach(container => {
+            Array.from(container.children).forEach((child, idx) => {
+                child.style.setProperty('--stagger-index', idx % 6);
+                child.classList.add('scroll-reveal', 'scroll-stagger');
+            });
+        });
+
+        // Key marketing components, cards, and section heads to animate on scroll
+        const targets = document.querySelectorAll(`
+            .reveal,
+            .section-head,
+            .journey-wrap,
+            .trust,
+            .event-card,
+            .blog-card,
+            .why-feature,
+            .stat-card,
+            .card,
+            .zp-card,
+            .zs-card,
+            .zp-section__head,
+            .zs-section__head,
+            .ze-hero__content,
+            .footer-grid > div
+        `);
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 1,
+                rootMargin: '0px 0px -30px 0px'
+            });
+
+            targets.forEach(el => {
+                if (!el.classList.contains('reveal')) {
+                    el.classList.add('scroll-reveal');
+                }
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add('in');
+                } else {
+                    observer.observe(el);
                 }
             });
-        }, { threshold: 0.1 });
+        } else {
+            targets.forEach(el => el.classList.add('in'));
+        }
+    })();
 
-        reveals.forEach(reveal => observer.observe(reveal));
-    }
+    /* --- 2b. Parallax Multiplane Scroll Engine (lerp-smoothed rAF loop) --- */
+    (function initParallaxEngine() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const dashboard = document.querySelector('.dashboard');
+        const phone = document.querySelector('.phone');
+        const whatsapp = document.querySelector('.whatsapp');
+        const fc1 = document.querySelector('.float-chip.fc1');
+        const fc2 = document.querySelector('.float-chip.fc2');
+        const fc3 = document.querySelector('.float-chip.fc3');
+        const customParallaxItems = document.querySelectorAll('[data-parallax], .parallax-item');
+
+        // Current lerped values per element
+        let lerpDash = 0, lerpPhone = 0, lerpWA = 0, lerpFc1 = 0, lerpFc2 = 0, lerpFc3 = 0;
+        const LERP = 0.1; // 0 = instant, 1 = never moves. 0.1 = silky smooth
+        let rafId = null;
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        function loop() {
+            const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+            const vh = window.innerHeight;
+
+            if (scrollY < vh * 1.5) {
+                const targetDash = scrollY * 0.06;
+                const targetPhone = scrollY * -0.10;
+                const targetWA = scrollY * 0.04;
+                const targetFc1 = scrollY * -0.14;
+                const targetFc2 = scrollY * 0.10;
+                const targetFc3 = scrollY * -0.07;
+
+                lerpDash = lerp(lerpDash, targetDash, LERP);
+                lerpPhone = lerp(lerpPhone, targetPhone, LERP);
+                lerpWA = lerp(lerpWA, targetWA, LERP);
+                lerpFc1 = lerp(lerpFc1, targetFc1, LERP);
+                lerpFc2 = lerp(lerpFc2, targetFc2, LERP);
+                lerpFc3 = lerp(lerpFc3, targetFc3, LERP);
+
+                if (dashboard) dashboard.style.setProperty('--parallax-y', lerpDash.toFixed(2) + 'px');
+                if (phone) phone.style.setProperty('--parallax-y', lerpPhone.toFixed(2) + 'px');
+                if (whatsapp) whatsapp.style.setProperty('--parallax-y', lerpWA.toFixed(2) + 'px');
+                if (fc1) fc1.style.setProperty('--parallax-y', lerpFc1.toFixed(2) + 'px');
+                if (fc2) fc2.style.setProperty('--parallax-y', lerpFc2.toFixed(2) + 'px');
+                if (fc3) fc3.style.setProperty('--parallax-y', lerpFc3.toFixed(2) + 'px');
+            }
+
+            // General [data-parallax] items — lerped by their own speed factor
+            customParallaxItems.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < vh && rect.bottom > 0) {
+                    const speed = parseFloat(el.getAttribute('data-parallax') || '0.06');
+                    const offset = ((rect.top + rect.height / 2) - (vh / 2)) * speed;
+                    el.style.transform = `translate3d(0, ${offset.toFixed(2)}px, 0)`;
+                }
+            });
+
+            rafId = requestAnimationFrame(loop);
+        }
+
+        loop(); // start continuous rAF loop — passive on scroll events
+    })();
 
     /* --- 3. Mobile Navigation Menu Toggle --- */
     const menuButtons = document.querySelectorAll('.menu-btn, #inner-menu-btn');
@@ -139,11 +304,11 @@ document.addEventListener('DOMContentLoaded', function () {
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 // Find parent site header or fallback to document query
                 const parentHeader = btn.closest('.site-header, .top-wrap') || document;
                 const targetNav = parentHeader.querySelector('.mobile-nav') || mobileNavs[0];
-                
+
                 if (targetNav) {
                     const isOpen = targetNav.classList.toggle('active');
                     btn.classList.toggle('is-open', isOpen);
@@ -190,10 +355,66 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /* --- 3b. Active Navigation Sync --- */
+    function syncActiveNav() {
+        const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+        const navAnchors = document.querySelectorAll('.nav-links-ul > li > a, .mobile-nav > a');
+
+        navAnchors.forEach(a => {
+            const href = a.getAttribute('href');
+            if (!href || href.indexOf('#') === 0) return;
+            try {
+                const url = new URL(href, window.location.origin);
+                const aPath = url.pathname.replace(/\/+$/, '') || '/';
+
+                let isMatch = false;
+                if (aPath === currentPath) {
+                    isMatch = true;
+                } else if (aPath !== '/' && currentPath.indexOf(aPath) === 0) {
+                    isMatch = true;
+                }
+
+                if (isMatch) {
+                    a.classList.add('active');
+                    const parentLi = a.closest('li');
+                    if (parentLi) {
+                        parentLi.classList.add('current-menu-item', 'active');
+                    }
+                }
+            } catch (err) {
+                // Ignore URL parse error
+            }
+        });
+    }
+    syncActiveNav();
+
+    /* --- 3c. Header Scroll (Dock to top: 0) --- */
+    const siteHeaders = document.querySelectorAll('.site-header, .top-wrap');
+    if (siteHeaders.length) {
+        let isScrolled = false;
+        const scrollThreshold = 15;
+
+        function handleHeaderScroll() {
+            const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+            const shouldBeScrolled = currentScrollY > scrollThreshold;
+
+            if (shouldBeScrolled !== isScrolled) {
+                isScrolled = shouldBeScrolled;
+                siteHeaders.forEach(hdr => hdr.classList.toggle('is-scrolled', isScrolled));
+                document.body.classList.toggle('header-is-scrolled', isScrolled);
+            }
+        }
+
+        window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+        handleHeaderScroll();
+    }
+
     /* --- 4. Smooth Anchor Scrolling & Hash Offset --- */
     function getHeaderOffset() {
         const header = document.querySelector('.top-wrap, .site-header');
-        return header ? header.offsetHeight + 20 : 100;
+        if (!header) return 100;
+        const isDocked = header.classList.contains('is-scrolled') || document.body.classList.contains('header-is-scrolled');
+        return header.offsetHeight + (isDocked ? 12 : 24);
     }
 
     function smoothScrollTo(targetY, duration) {
@@ -252,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         hash = url.hash;
                         isSamePage = true;
                     }
-                } catch (err) {}
+                } catch (err) { }
             }
 
             if (isSamePage && hash && hash !== '#') {
@@ -260,10 +481,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (targetElement) {
                     e.preventDefault();
                     if (mobileNav) mobileNav.classList.remove('active');
-                    
+
                     // Unfocus active dropdown item on click
                     if (document.activeElement) document.activeElement.blur();
-                    
+
                     scrollToElement(targetElement);
                     if (history.pushState) {
                         history.pushState(null, null, hash);
@@ -348,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function () {
             zinvosFeatures.forEach(item => item.classList.toggle('is-active', item.dataset.feature === feature));
             zinvosScenes.forEach(scene => scene.classList.toggle('is-active', scene.dataset.scene === feature));
             zinvosProgress.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
-            
+
             // Brief visual refresh effect on title/text change
             if (zinvosVisualHeading) {
                 zinvosVisualHeading.classList.add('is-updating');
@@ -424,7 +645,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const partnerSuccess = document.getElementById('partnerSuccess');
 
     if (partnerForm) {
-        partnerForm.addEventListener('submit', function(event) {
+        partnerForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
             if (!partnerForm.checkValidity()) {
@@ -443,7 +664,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const contactSuccessMsg = document.getElementById('contactSuccessMsg');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
+        contactForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
             if (!contactForm.checkValidity()) {

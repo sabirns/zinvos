@@ -70,6 +70,9 @@
             ├── 404.php               # Not found error page template
             ├── archive-event.php     # Event CPT archive listing (Upcoming vs Past sorting)
             ├── single-event.php      # Single Event CPT detailed view
+            ├── features-list.php     # Features showcase listing template (queries feature CPTs)
+            ├── page-features.php     # Alias template delegating to features-list.php
+            ├── single-feature.php    # Single Feature CPT detailed view
             ├── page-about.php        # About page template
             ├── page-about-zinvos.php # Alias template delegating to page-about.php
             ├── page-blog.php         # Custom blog listing page template
